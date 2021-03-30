@@ -2,7 +2,7 @@ public class TestAccountWithoutCustomer {
 
     public static void main(String[] args) {
         Account accountWithoutCustomer = new Account();
-        System.out.println(accountWithoutCustomer.balance);
+        System.out.println(accountWithoutCustomer.getBalance());
 
         // direct composition of customer and account
         accountWithoutCustomer.holder = new Customer();

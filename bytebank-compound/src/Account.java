@@ -1,6 +1,6 @@
 public class Account {
 	
-	double balance;
+	private double balance;
 	int agency;
 	int number;
 	Customer holder;
@@ -27,4 +27,8 @@ public class Account {
         }
            return false;
         }
+
+    public double getBalance() {
+        return this.balance;
+    }
 }
