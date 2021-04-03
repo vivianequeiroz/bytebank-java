@@ -4,15 +4,18 @@ public class Account {
 	private int agency;
 	private int number;
 	private String holder;
-    private int total;
+    private static int total;
 	
     public Account(int agency, int number) {
+        Account.total++;
+        System.out.println("O total de contas criadas é: " + total);
         this.agency = agency;
         this.number = number;
     }
 	
-	public void deposit(double amount) {
+	public double deposit(double amount) {
 		this.balance += amount;
+        return balance;
 	}
 
     public boolean withdrawMoney(double value) {
@@ -46,9 +49,9 @@ public class Account {
     }
 
     public int getAgency() {
-        if(agence <= 0) {
+        if(agency <= 0) {
             System.out.println("Não é aceito valores menores ou iguais a 0");
-            return;
+            return 0;
         }
         return this.agency;
     }
@@ -57,11 +60,15 @@ public class Account {
         this.agency = agency;
     }
 
-    public void setHolder(Customer holder) {
+    public Customer setHolder(Customer holder) {
         this.holder = holder;
     }
 
-    public Customer getHolder() {
-        return this.holder;
+    public void getHolder() {
+        this.holder;
+    }
+    
+    public static int getTotal() {
+        return Account.total;
     }
 }
