@@ -27,4 +27,32 @@ public class Account {
         }
            return false;
         }
+
+    public double getBalance() {
+        return this.balance;
+    }
+
+    public int getNumber() {
+        return this.number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    public int getAgency() {
+        return this.agency;
+    }
+
+    public void setAgency(int agency) {
+        this.agency = agency;
+    }
+
+    public void setHolder(Customer holder) {
+        this.holder = holder;
+    }
+
+    public Customer getHolder() {
+        return this.holder;
+    }
 }
