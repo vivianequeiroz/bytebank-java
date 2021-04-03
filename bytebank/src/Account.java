@@ -1,10 +1,15 @@
 public class Account {
 	
-	double balance;
-	int agency;
-	int number;
-	String holder;
+	private double balance;
+	private int agency;
+	private int number;
+	private String holder;
+    private int total;
 	
+    public Account(int agency, int number) {
+        this.agency = agency;
+        this.number = number;
+    }
 	
 	public void deposit(double amount) {
 		this.balance += amount;
@@ -41,6 +46,10 @@ public class Account {
     }
 
     public int getAgency() {
+        if(agence <= 0) {
+            System.out.println("Não é aceito valores menores ou iguais a 0");
+            return;
+        }
         return this.agency;
     }
 
