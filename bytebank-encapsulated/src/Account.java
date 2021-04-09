@@ -47,4 +47,12 @@ public class Account {
     public void setAgency(int newAgency) {
         this.agency = newAgency;
     }
+
+    public String getHolder() {
+        return this.holder;
+    }
+
+    public void setHolder(Customer holder) {
+        this.holder = holder;
+    }
 }
