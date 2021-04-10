@@ -1,11 +1,12 @@
-public class Manager extends Employee implements Authenticated {
-	
+public class Admin extends Employee implements Authenticated {
+
 	private int password;
 	
+	@Override
 	public double getBonus() {
-		return super.getSalary();
+		return 100;
 	}
-
+	
 	@Override
 	public void setPassword(int password) {
 		this.password = password;
@@ -20,5 +21,6 @@ public class Manager extends Employee implements Authenticated {
 			return false;
 		}
 	}
+
 
 }

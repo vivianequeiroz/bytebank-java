@@ -1,11 +1,6 @@
-public class Manager extends Employee implements Authenticated {
-	
-	private int password;
-	
-	public double getBonus() {
-		return super.getSalary();
-	}
+public class Customer implements Authenticated {
 
+	private int password;
 	@Override
 	public void setPassword(int password) {
 		this.password = password;
