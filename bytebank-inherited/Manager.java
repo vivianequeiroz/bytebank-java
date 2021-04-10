@@ -1,6 +1,10 @@
 public class Manager extends Employee implements Authenticated {
 	
-	private int password;
+	private AuthenticatorController auth;
+	
+	public Manager() {
+		this.auth = new AuthenticatorController();
+	}
 	
 	public double getBonus() {
 		return super.getSalary();
@@ -8,17 +12,13 @@ public class Manager extends Employee implements Authenticated {
 
 	@Override
 	public void setPassword(int password) {
-		this.password = password;
+		this.auth.setPassword(password);
 		
 	}
 
 	@Override
 	public boolean authenticate(int password) {
-		if(this.password == password) {
-			return true;
-		} else { 
-			return false;
-		}
+		return this.auth.authenticate(password);
 	}
 
 }
