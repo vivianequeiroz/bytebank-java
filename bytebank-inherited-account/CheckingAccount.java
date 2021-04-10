@@ -9,4 +9,10 @@ public class CheckingAccount extends Account {
      double valueToWithdraw = value + 0.2;
     return super.withdraw(valueToWithdraw);
     }
+
+    @Override
+    public void deposit(double value) {
+        super.balance += value;
+        
+    }
 }

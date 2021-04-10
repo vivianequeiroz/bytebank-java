@@ -1,6 +1,6 @@
-public class Account {
+public abstract class Account {
 	
-    private double balance;
+    protected double balance;
     private int agency;
     private int number;
     private Customer holder;
@@ -15,9 +15,7 @@ public class Account {
 //        System.out.println("Estou criando uma conta " + this.number);
     }
 
-    public void deposit(double value) {
-        this.balance = this.balance + value;
-    }
+    public abstract void deposit(double value);
 
     public boolean withdraw(double value) {
         if(this.balance >= value) {
