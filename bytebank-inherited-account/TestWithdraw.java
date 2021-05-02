@@ -35,4 +35,4 @@ public class TestWithdraw {
 // 200.0
 
 
-//unchecked!
+//console shows the same message both with unchecked and checked exceptions!

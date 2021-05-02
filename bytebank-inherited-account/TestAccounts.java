@@ -1,6 +1,6 @@
 public class TestAccounts {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InsufficientBalanceException {
 	
 	SavingsAccount sa = new SavingsAccount(123, 123);
 	sa.deposit(100.0);

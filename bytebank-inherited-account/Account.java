@@ -17,7 +17,7 @@ public abstract class Account {
 
     public abstract void deposit(double value);
 
-    public void withdraw(double value) {
+    public void withdraw(double value) throws InsufficientBalanceException {
     	
         if(this.balance < value) {
           throw new InsufficientBalanceException("Saldo: " + this.balance + ", Valor a sacar: "  + value);
@@ -26,7 +26,7 @@ public abstract class Account {
         this.balance -= value;
     }
 
-    public void transfer(double value, Account destination) {
+    public void transfer(double value, Account destination) throws InsufficientBalanceException {
         this.withdraw(value);
         destination.deposit(value);
     }
@@ -72,4 +72,3 @@ public abstract class Account {
     }
 
 }
-
