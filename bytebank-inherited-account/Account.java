@@ -17,24 +17,20 @@ public abstract class Account {
 
     public abstract void deposit(double value);
 
-    public boolean withdraw(double value) {
-        if(this.balance >= value) {
-            this.balance -= value;
-            return true;
-        } else {
-            return false;
+    public void withdraw(double value) {
+    	
+        if(this.balance < value) {
+          throw new InsufficientBalanceException("Saldo: " + this.balance + ", Valor a sacar: "  + value);
         }
+        
+        this.balance -= value;
     }
 
-    public boolean transfer(double value, Account destination) {
-        if(this.withdraw(value)) {
-                destination.deposit(value);
-                return true;
-        } else {
-                return false;
-        }
+    public void transfer(double value, Account destination) {
+        this.withdraw(value);
+        destination.deposit(value);
     }
-
+    
     public double getBalance(){
         return this.balance;
     }
@@ -76,3 +72,4 @@ public abstract class Account {
     }
 
 }
+
